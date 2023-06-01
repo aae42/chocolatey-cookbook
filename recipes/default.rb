@@ -37,6 +37,7 @@ powershell_script 'Install Chocolatey' do
   environment node['chocolatey']['install_vars']
   cwd Chef::Config['file_cache_path']
   code install_ps1
+  live_stream true
   not_if { chocolatey_installed? }
 end
 
